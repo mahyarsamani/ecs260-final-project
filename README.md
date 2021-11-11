@@ -50,13 +50,3 @@ These predictors will predict an outcome which is the number of commits.
 ## Note
 
 Never push your code to master branch, rather create a branch with your name (just a suggestion) and then create a PR.
-
-## Instructions to run Mahyar's code
-```sh
-cd process_issues
-git clone https://github.com/PyGithub/PyGithub.git
-virtualenv -p python3 venv
-source venv/bin/activate
-pip install -e PyGithub
-python process_issues.py
-```

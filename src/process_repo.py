@@ -1,6 +1,8 @@
 import os
+import argparse
 
 from github import Github
+
 
 class Developer():
     def __init__(self, dev_id):
@@ -110,8 +112,18 @@ def dump_to_csv(devs, out_file):
     for _, dev in devs.items():
         out_file.write(f"{dev}\n")
 
+def get_inputs():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("repo_name", type=str)
+    parser.add_argument("out_name", type=str)
+    args = parser.parse_args()
+    outfile_name = os.path.join("../dataset", args.out_name)
+    return args.repo_name, outfile_name
+
 if __name__ == "__main__":
-    repo = get_repo("gunrock/gunrock")
+    repo_name, outfile = get_inputs()
+
+    repo = get_repo(repo_name)
 
     devs = {}
     start_id = 0
@@ -120,5 +132,5 @@ if __name__ == "__main__":
     devs, new_start_id = process_prs(repo, devs, new_start_id)
     devs = process_commits(repo, devs)
 
-    with open("../dataset/gunrock.csv", "w") as outfile:
+    with open(outfile, "w") as outfile:
         dump_to_csv(devs, outfile)
