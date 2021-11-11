@@ -82,10 +82,10 @@ def process_prs(repo, devs, start_index):
         if pr.merged:
             merger_login = pr.merged_by.login
             if merger_login in devs:
-                devs[merger_login].add_pr_opened()
+                devs[merger_login].add_pr_merged()
             else:
                 dev = Developer(index)
-                dev.add_pr_opened()
+                dev.add_pr_merged()
                 devs[merger_login] = dev
                 index += 1
         elif pr.state == "closed":
@@ -106,7 +106,7 @@ def process_commits(repo, devs):
     return devs
 
 def dump_to_csv(devs, out_file):
-    out_file.write("Developer,Num_commits,Num_bugs,PR_opened,PR_closed,PR_merged\n")
+    out_file.write("Developer,Num_bugs,PR_opened,PR_closed,PR_merged,Num_commits\n")
     for _, dev in devs.items():
         out_file.write(f"{dev}\n")
 
@@ -120,5 +120,5 @@ if __name__ == "__main__":
     devs, new_start_id = process_prs(repo, devs, new_start_id)
     devs = process_commits(repo, devs)
 
-    with open("gunrock.csv", "w") as outfile:
+    with open("../dataset/gunrock.csv", "w") as outfile:
         dump_to_csv(devs, outfile)
