@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Num_commits   R-squared:                       0.004
+Model:                            OLS   Adj. R-squared:                 -0.052
+Method:                 Least Squares   F-statistic:                   0.06830
+Date:                Thu, 11 Nov 2021   Prob (F-statistic):              0.797
+Time:                        00:01:13   Log-Likelihood:                -94.709
+No. Observations:                  20   AIC:                             193.4
+Df Residuals:                      18   BIC:                             195.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     58.6449     12.350      4.749      0.000      32.699      84.591
+PR_closed     -0.0547      0.209     -0.261      0.797      -0.494       0.385
+==============================================================================
+Omnibus:                        2.667   Durbin-Watson:                   1.191
+Prob(Omnibus):                  0.264   Jarque-Bera (JB):                1.167
+Skew:                          -0.017   Prob(JB):                        0.558
+Kurtosis:                       1.817   Cond. No.                         112.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 # read_file = pd.read_excel(r'~\ecs260-final-project\metrics_dummydata.xlsx', sheet_name='metrics_dummydata')
 # read_file.to_csv(r'~\ecs260-final-project\metrics_dummydata.csv', index=None, header=True)
 
-data = pd.read_csv('metrics_dummydata.csv')  # load data set
+data = pd.read_csv('../dataset/metrics_dummydata.csv')  # load data set
 
 ## Performance(num_bugs) vs Productivity(num_commits)
 num_commits = data.iloc[:, 1].values.reshape(-1, 1)  # (Y-value) values converts it into a numpy array
@@ -16,7 +16,7 @@ linear_regressor = LinearRegression()  # create object for the class
 linear_regressor.fit(num_bugs, num_commits)  # perform linear regression
 num_commits_pred = linear_regressor.predict(num_bugs)  # make predictions
 
-fig, ax = plt.subplots(3, 2)
+fig, ax = plt.subplots(3, 2, figsize = (8,8))
 ax[0,0].scatter(num_bugs, num_commits)
 ax[0,0].plot(num_bugs, num_commits_pred, color='red')
 ax[0,0].set_title("Performance v.s. Productivity")
@@ -95,4 +95,5 @@ ax[2,0].set_ylabel("Productivity(Commits)")
 # plt.plot(PR_unmerged, num_commits_pred, color='red')
 
 fig.tight_layout()
+plt.savefig('../results/plots.png')
 plt.show()
