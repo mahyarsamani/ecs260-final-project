@@ -1,3 +1,0 @@
-[submodule "dataset/pullreq_ci"]
-	path = dataset/pullreq_ci
-	url = https://github.com/Yuyue/pullreq_ci.git
