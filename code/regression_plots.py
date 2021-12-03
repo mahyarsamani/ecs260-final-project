@@ -97,3 +97,103 @@ ax[2,0].set_ylabel("Productivity(Commits)")
 fig.tight_layout()
 plt.savefig('../results/plots.png')
 plt.show()
+
+
+mlr = LinearRegression()
+#mlr.fit(
+#        [
+#            [getattr(t, 'x%d' % i) for i in range(1, 8)] for t in texts
+#            ],
+#        [t.y for t in texts])
+
+# Model(ACP) = PR_unmerged + PR_closed + PR_opened + num_bugs, y = num_commits
+
+PR_unmerged = PR_unmerged.reshape(20)
+PR_closed = PR_closed.reshape(20)
+PR_opened = PR_opened.reshape(20)
+num_bugs = num_bugs.reshape(20)
+num_commits = num_commits.reshape(20)
+
+print(PR_unmerged.shape)
+print(PR_closed.shape)
+print(PR_opened.shape)
+print(num_bugs.shape)
+print(num_commits.shape)
+
+X1 = [x for x in PR_unmerged]
+X2 = [x for x in PR_closed]
+X3 = [x for x in PR_opened]
+X4 = [x for x in num_bugs]
+
+X = [X1, X2, X3, X4]
+
+Y = [x for x in num_commits]
+
+import statsmodels.api as sm
+from pandas import DataFrame
+
+Productivity = {'PR_unmerged': X1,
+                'PR_closed'  : X2,
+                'PR_opened'  : X3,
+                'num_bugs'   : X4,
+                'num_commits': Y}
+
+print(X4)
+print(Y)
+
+df = DataFrame(Productivity, columns=['PR_unmerged', 'PR_closed', 'PR_opened', 'num_bugs', 'num_commits'])
+
+#X = df[['PR_unmerged', 'PR_closed', 'PR_opened', 'num_bugs']]
+X = df[['num_bugs']]
+Y = df['num_commits']
+
+X = sm.add_constant(X)
+model = sm.OLS(Y, X).fit()
+predictions = model.predict(X)
+print_model = model.summary()
+print(print_model)
+
+
+def reg_m(y, x):
+    ones = np.ones(len(x[0]))
+    X = sm.add_constant(np.column_stack((x[0], ones)))
+    for ele in x[1:]:
+        X = sm.add_constant(np.column_stack((ele, X)))
+    print(X)
+    print(y)
+    model = sm.OLS(y, X)
+    return model
+
+#print(X1)
+#print(X2)
+#print(X3)
+#print(X4)
+#print(Y)
+
+#model = reg_m(Y, X)
+#results = model.fit()
+#print (results.summary())
+#print (results.params)
+#print (results.tvalues)
+
+##X = np.array([X1, X2, X3, X4]).T
+##print("X shape ", X.shape)
+##print("y shape ", num_commits.shape)
+##
+##linear_regressor = LinearRegression()
+##reg = linear_regressor.fit(X, num_commits)
+##print(reg.score(X, num_commits))
+##print(reg.coef_)
+##print(reg.intercept_)
+##
+##productivity = linear_regressor.predict(X)
+
+
+
+
+
+
+
+
+
+
