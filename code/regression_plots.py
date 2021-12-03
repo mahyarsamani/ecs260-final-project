@@ -96,7 +96,7 @@ ax[2,0].set_ylabel("Productivity(Commits)")
 
 fig.tight_layout()
 plt.savefig('../results/plots.png')
-plt.show()
+#plt.show()
 
 
 mlr = LinearRegression()
@@ -143,17 +143,24 @@ print(Y)
 
 df = DataFrame(Productivity, columns=['PR_unmerged', 'PR_closed', 'PR_opened', 'num_bugs', 'num_commits'])
 
-X = df[['PR_unmerged', 'PR_closed', 'PR_opened', 'num_bugs']]
+#X = df[['PR_unmerged', 'PR_closed', 'PR_opened', 'num_bugs']]
 #X = df[['PR_unmerged', 'PR_closed', 'num_bugs']]
-#X = df[['PR_closed']]
+X = df[['PR_closed']]
 #X = df['PR_closed']
 Y = df['num_commits']
 
-#X = sm.add_constant(X)
+print(X)
+
+X = sm.add_constant(X)
+
+print(X)
+print(Y)
+
 model = sm.OLS(Y, X).fit()
-predictions = model.predict(X)
 print_model = model.summary()
 print(print_model)
+
+predictions = model.predict(X)
 
 pred_ols = model.get_prediction()
 iv_l = pred_ols.summary_frame()["obs_ci_lower"]
@@ -161,11 +168,11 @@ iv_u = pred_ols.summary_frame()["obs_ci_upper"]
 
 fig2, ax2 = plt.subplots(figsize=(8, 6))
 
-ax2.plot(X, Y, "o", label="data")
+ax2.scatter(X, Y)
 #ax2.plot(X, y_true, "b-", label="True")
-ax2.plot(X, model.fittedvalues, "r--.", label="OLS")
-ax2.plot(X, iv_u, "r--")
-ax2.plot(X, iv_l, "r--")
+ax2.plot(X, predictions, "r--.", label="OLS")
+#ax2.plot(X, iv_u, "r--")
+#ax2.plot(X, iv_l, "r--")
 ax2.legend(loc="best")
 
 plt.savefig('../results/plots2.png')
