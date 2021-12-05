@@ -1,88 +1,55 @@
 import os
 import argparse
 
-from github import Github
+from excavator.developer import Developer
+from excavator.excavate import get_repo, get_issues, get_pulls, get_commits
 
-
-class Developer():
-    def __init__(self, dev_id):
-        self.id = dev_id
-        self.num_issues_closed = 0
-        self.num_pr_opened = 0
-        self.num_pr_closed = 0
-        self.num_pr_merged = 0
-        self.num_commits = 0
-
-    def add_issue_closed(self, inc = 1):
-        self.num_issues_closed += inc
-
-    def add_pr_opened(self, inc = 1):
-        self.num_pr_opened += inc
-
-    def add_pr_closed(self, inc = 1):
-        self.num_pr_closed += inc
-
-    def add_pr_merged(self, inc = 1):
-        self.num_pr_merged += inc
-
-    def add_commit(self, inc = 1):
-        self.num_commits += inc
-
-    def __str__(self):
-        return f"{self.id},{self.num_issues_closed},{self.num_pr_opened},{self.num_pr_closed},{self.num_pr_merged},{self.num_commits}"
-
-    def __repr__(self):
-        return str(self)
-
-def get_repo(repo):
-    token = os.getenv("GITHUB_TOKEN", "...")
-    git = Github(token)
-    return git.get_repo(repo)
-
-def get_issues(repo, state):
-    return repo.get_issues(state=state)
-
-def get_pull_requests(repo, pr_state):
-    return repo.get_pulls(state=pr_state)
-
-def process_issues(repo, devs, start_index):
+def process_issues(repo, devs, start_index, num_requests_already_made = 0):
     index = start_index
-    issues = get_issues(repo, "closed")
+    issues, num_requests_already_made = get_issues(repo,
+        num_requests_already_made=num_requests_already_made)
 
     for issue in issues:
-        if issue.closed_by is None:
-            continue
-        if issue.closed_by.login is None:
-            continue
-
-        developer_login = issue.closed_by.login
-
-        if developer_login in devs:
-            devs[developer_login].add_issue_closed()
-        else:
-            dev = Developer(index)
-            dev.add_issue_closed()
-            devs[developer_login] = dev
-            index += 1
-
-    return devs, index
-
-def process_prs(repo, devs, start_index):
-    index = start_index
-    prs = get_pull_requests(repo, "closed")
-
-    for pr in prs:
-        opener_login = pr.user.login
+        opener_login = issue.user.login
         if opener_login in devs:
-            devs[opener_login].add_pr_opened()
+            devs[opener_login].add_issue_opened()
         else:
             dev = Developer(index)
-            dev.add_pr_opened()
+            dev.add_issue_opened()
             devs[opener_login] = dev
             index += 1
 
-        if pr.merged:
-            merger_login = pr.merged_by.login
+        if issue.state == "closed":
+            closer_login = issue.closed_by.login
+            if closer_login in devs:
+                devs[closer_login].add_issue_closed()
+            else:
+                dev = Developer(index)
+                dev.add_issue_closed()
+                devs[closer_login] = dev
+                index += 1
+
+    return devs, index, num_requests_already_made
+
+def process_prs(repo, devs, start_index, num_requests_already_made = 0):
+    index = start_index
+    pulls, num_requests_already_made = get_pulls(repo,
+        num_requests_already_made=num_requests_already_made)
+
+    for pull in pulls:
+        opener_login = pull.user.login
+
+        if opener_login:
+            if opener_login in devs:
+                devs[opener_login].add_pr_opened()
+            else:
+                dev = Developer(index)
+                dev.add_pr_opened()
+                devs[opener_login] = dev
+                index += 1
+
+        if pull.merged:
+            merger_login = pull.merged_by.login
             if merger_login in devs:
                 devs[merger_login].add_pr_merged()
             else:
@@ -90,47 +57,63 @@ def process_prs(repo, devs, start_index):
                 dev.add_pr_merged()
                 devs[merger_login] = dev
                 index += 1
-        elif pr.state == "closed":
-            user_login = pr.user.login
-            if user_login in devs:
-                devs[user_login].add_pr_closed()
+
+        if pull.state == "closed" and not pull.merged:
+            closer_login = pull.user.login
+            if closer_login in devs:
+                devs[closer_login].add_issue_closed()
             else:
                 dev = Developer(index)
                 dev.add_pr_closed()
-                devs[user_login] = dev
+                devs[closer_login] = dev
+                index += 1
+
+    return devs, index, num_requests_already_made
+
+def process_commits(repo, devs, start_index):
+    index = start_index
+    commits = get_commits(repo)
+    print(commits)
+    for commit in commits:
+        if commit and commit.author:
+            author_login = commit.author.login
+            if author_login in devs:
+                devs[author_login].add_commit()
+            else:
+                dev = Developer(index)
+                dev.add_commit()
+                devs[author_login] = dev
                 index += 1
 
     return devs, index
 
-def process_commits(repo, devs):
-    for dev_login in devs.keys():
-        devs[dev_login].add_commit(inc=repo.get_commits(author=dev_login).totalCount)
-    return devs
-
 def dump_to_csv(devs, out_file):
-    out_file.write("Developer,Num_bugs,PR_opened,PR_closed,PR_merged,Num_commits\n")
+    out_file.write("developer,issue_opened,issue_closed,pr_opened,pr_closed,pr_merged,commits\n")
     for _, dev in devs.items():
         out_file.write(f"{dev}\n")
 
 def get_inputs():
     parser = argparse.ArgumentParser()
+    parser.add_argument("gh_token", type=str)
     parser.add_argument("repo_name", type=str)
     parser.add_argument("out_name", type=str)
     args = parser.parse_args()
     outfile_name = os.path.join("../dataset", args.out_name)
-    return args.repo_name, outfile_name
+    return args.gh_token, args.repo_name, outfile_name
 
 if __name__ == "__main__":
-    repo_name, outfile = get_inputs()
+    token, repo_name, outfile = get_inputs()
 
-    repo = get_repo(repo_name)
+    repo = get_repo(repo_name, token)
 
     devs = {}
     start_id = 0
+    requests = 0
 
-    devs, new_start_id = process_issues(repo, devs, start_id)
-    devs, new_start_id = process_prs(repo, devs, new_start_id)
-    devs = process_commits(repo, devs)
+    devs, new_start_id, requests = process_issues(repo, devs, start_id, num_requests_already_made=requests)
+    devs, new_start_id, requests = process_prs(repo, devs, new_start_id, num_requests_already_made=requests)
+    devs, new_start_id = process_commits(repo, devs, new_start_id)
 
+    print(f"Made {requests} requests and created {new_start_id} devs.")
     with open(outfile, "w") as outfile:
         dump_to_csv(devs, outfile)
