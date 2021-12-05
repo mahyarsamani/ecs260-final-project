@@ -73,17 +73,21 @@ def process_prs(repo, devs, start_index, num_requests_already_made = 0):
 def process_commits(repo, devs, start_index):
     index = start_index
     commits = get_commits(repo)
-    print(commits)
     for commit in commits:
-        if commit and commit.author:
-            author_login = commit.author.login
-            if author_login in devs:
-                devs[author_login].add_commit()
-            else:
-                dev = Developer(index)
-                dev.add_commit()
-                devs[author_login] = dev
-                index += 1
+        if commit:
+            if commit.author:
+                if commit.author.login:
+                    try:
+                        author_login = commit.author.login
+                        if author_login in devs:
+                            devs[author_login].add_commit()
+                        else:
+                            dev = Developer(index)
+                            dev.add_commit()
+                            devs[author_login] = dev
+                            index += 1
+                    except Exception as e:
+                        print(f"{__name__}: {e}")
 
     return devs, index
 
