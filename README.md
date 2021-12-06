@@ -50,3 +50,17 @@ These predictors will predict an outcome which is the number of commits.
 ## Note
 
 Never push your code to master branch, rather create a branch with your name (just a suggestion) and then create a PR.
+
+## Datasets
+
+For each project we gather the follwoing data:
+* _developer\_id_
+* _time_window_
+* _issue_opened_
+* _issue_closed_
+* _pr_opened_
+* _pr_closed_
+* _pr_merged_
+* _commits_
+
+
