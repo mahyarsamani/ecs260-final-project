@@ -68,5 +68,4 @@ For each project we gather the follwoing data:
 1. Statistics for the selected GitHub projects. (Language, issues, PRs, commits)
 2. Statistics on the metrics related to productivity over a period of 12 time windows: mean, st. dev, min, median, max
    for: _issue_opened_, _issue_closed_, _pr_opened_, _pr_closed_, _pr_merged_, _commits_.
-3. The number of commits posted monthly per developer.
-4. Results
+3. Results
