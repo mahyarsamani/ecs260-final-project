@@ -63,9 +63,11 @@ For each project we gather the follwoing data:
 * _pr_merged_
 * _commits_
 
-## Plots list
+## Plots list & Tables
 
 1. Statistics for the selected GitHub projects. (Language, issues, PRs, commits)
 2. Statistics on the metrics related to productivity over a period of 12 time windows: mean, st. dev, min, median, max
    for: _issue_opened_, _issue_closed_, _pr_opened_, _pr_closed_, _pr_merged_, _commits_.
-3. Results
+3. Multilinear regression summary table for all repos
+4. Maybe include linear regression summaries and plots (?)
+5. Results
