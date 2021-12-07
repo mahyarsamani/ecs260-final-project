@@ -136,6 +136,21 @@ for filename in glob.glob('../dataset/*.csv'):
     vif.round(1)
     print(vif)
 
+    id_max = vif["VIF Factor"].idxmax()
+    while id_max >= 0 and vif["VIF Factor"][id_max] >= 5:
+        print("there is collinearity!")
+        to_drop = vif["features"][id_max]
+        #to_drop = "issue_closed"
+        print("dropping: ", to_drop)
+        X = X.drop(columns=[to_drop])
+        print("new columns: ", X.columns)
+        vif = pd.DataFrame()
+        vif["VIF Factor"] = [variance_inflation_factor(X.values, i) for i in range(len(X.columns))]
+        vif["features"] = X.columns
+        vif.round(1)
+        print(vif)
+        id_max = vif["VIF Factor"].idxmax()
+
     zeroes_num    = (data_df['commits'] == 0).sum()
     nonzeroes_num = (data_df['commits'] != 0).sum()
 
