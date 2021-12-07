@@ -1,28 +1,30 @@
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:            Num_commits   R-squared:                       0.975
-Model:                            OLS   Adj. R-squared:                  0.974
-Method:                 Least Squares   F-statistic:                     2211.
-Date:                Mon, 06 Dec 2021   Prob (F-statistic):          1.23e-181
-Time:                        09:27:08   Log-Likelihood:                -619.61
-No. Observations:                 234   AIC:                             1249.
-Df Residuals:                     229   BIC:                             1266.
-Df Model:                           4                                         
+Dep. Variable:                commits   R-squared:                       0.046
+Model:                            OLS   Adj. R-squared:                  0.043
+Method:                 Least Squares   F-statistic:                     17.11
+Date:                Mon, 06 Dec 2021   Prob (F-statistic):           7.41e-11
+Time:                        18:57:45   Log-Likelihood:                -7501.4
+No. Observations:                1070   AIC:                         1.501e+04
+Df Residuals:                    1066   BIC:                         1.503e+04
+Df Model:                           3                                         
 Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           24.9601      8.274      3.017      0.003       8.725      41.195
+issue_opened   -12.3075     12.702     -0.969      0.333     -37.232      12.616
+pr_opened       27.1936      6.602      4.119      0.000      14.240      40.147
+pr_closed             0          0        nan        nan           0           0
+pr_merged       27.5231     10.478      2.627      0.009       6.964      48.083
 ==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const         -0.6845      0.257     -2.663      0.008      -1.191      -0.178
-Num_bugs       0.8865      0.070     12.720      0.000       0.749       1.024
-PR_opened      0.5873      0.082      7.200      0.000       0.427       0.748
-PR_closed      0.2817      0.375      0.750      0.454      -0.458       1.022
-PR_merged     -0.0126      0.109     -0.116      0.908      -0.227       0.201
-==============================================================================
-Omnibus:                      188.043   Durbin-Watson:                   1.832
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):            11988.994
-Skew:                          -2.469   Prob(JB):                         0.00
-Kurtosis:                      37.717   Cond. No.                         42.5
+Omnibus:                     2445.442   Durbin-Watson:                   2.004
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         10212635.882
+Skew:                          20.542   Prob(JB):                         0.00
+Kurtosis:                     479.844   Cond. No.                          inf
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
