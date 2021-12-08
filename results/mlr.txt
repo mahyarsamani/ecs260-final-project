@@ -1,28 +1,519 @@
+../dataset/apple.csv
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:            Num_commits   R-squared:                       0.975
-Model:                            OLS   Adj. R-squared:                  0.974
-Method:                 Least Squares   F-statistic:                     2211.
-Date:                Sun, 05 Dec 2021   Prob (F-statistic):          1.23e-181
-Time:                        01:48:10   Log-Likelihood:                -619.61
-No. Observations:                 234   AIC:                             1249.
-Df Residuals:                     229   BIC:                             1266.
-Df Model:                           4                                         
+Dep. Variable:                commits   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                  0.008
+Method:                 Least Squares   F-statistic:                     4.020
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):            0.00737
+Time:                        22:43:29   Log-Likelihood:                -9355.6
+No. Observations:                1163   AIC:                         1.872e+04
+Df Residuals:                    1159   BIC:                         1.874e+04
+Df Model:                           3                                         
 Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const          102.6131     22.955      4.470      0.000      57.575     147.651
+pr_opened        5.4509     43.249      0.126      0.900     -79.405      90.306
+pr_merged       33.0619      9.805      3.372      0.001      13.824      52.300
+issue_closed    53.2967     93.328      0.571      0.568    -129.815     236.408
 ==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const         -0.6845      0.257     -2.663      0.008      -1.191      -0.178
-Num_bugs       0.8865      0.070     12.720      0.000       0.749       1.024
-PR_opened      0.5873      0.082      7.200      0.000       0.427       0.748
-PR_closed      0.2817      0.375      0.750      0.454      -0.458       1.022
-PR_merged     -0.0126      0.109     -0.116      0.908      -0.227       0.201
-==============================================================================
-Omnibus:                      188.043   Durbin-Watson:                   1.832
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):            11988.994
-Skew:                          -2.469   Prob(JB):                         0.00
-Kurtosis:                      37.717   Cond. No.                         42.5
+Omnibus:                     2408.053   Durbin-Watson:                   1.914
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          6292154.387
+Skew:                          16.497   Prob(JB):                         0.00
+Kurtosis:                     361.829   Cond. No.                         9.97
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/bitcoin.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.046
+Model:                            OLS   Adj. R-squared:                  0.043
+Method:                 Least Squares   F-statistic:                     17.11
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           7.41e-11
+Time:                        22:43:29   Log-Likelihood:                -7501.4
+No. Observations:                1070   AIC:                         1.501e+04
+Df Residuals:                    1066   BIC:                         1.503e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           24.9601      8.274      3.017      0.003       8.725      41.195
+pr_opened       27.1936      6.602      4.119      0.000      14.240      40.147
+pr_merged       27.5231     10.478      2.627      0.009       6.964      48.083
+issue_opened   -12.3075     12.702     -0.969      0.333     -37.232      12.616
+==============================================================================
+Omnibus:                     2445.442   Durbin-Watson:                   2.004
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         10212635.882
+Skew:                          20.542   Prob(JB):                         0.00
+Kurtosis:                     479.844   Cond. No.                         3.23
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/duckduckgo.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.221
+Model:                            OLS   Adj. R-squared:                  0.195
+Method:                 Least Squares   F-statistic:                     8.630
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           0.000501
+Time:                        22:43:29   Log-Likelihood:                -304.34
+No. Observations:                  64   AIC:                             614.7
+Df Residuals:                      61   BIC:                             621.2
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            8.7920      3.939      2.232      0.029       0.917      16.668
+issue_opened    -1.4758      1.508     -0.978      0.332      -4.492       1.540
+issue_closed     3.2637      0.786      4.153      0.000       1.692       4.835
+==============================================================================
+Omnibus:                      106.159   Durbin-Watson:                   2.015
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2429.796
+Skew:                           5.222   Prob(JB):                         0.00
+Kurtosis:                      31.321   Cond. No.                         5.50
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/ethereum-org-website.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.041
+Model:                            OLS   Adj. R-squared:                  0.036
+Method:                 Least Squares   F-statistic:                     8.075
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           2.83e-05
+Time:                        22:43:30   Log-Likelihood:                -3699.4
+No. Observations:                 573   AIC:                             7407.
+Df Residuals:                     569   BIC:                             7424.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           17.3831      6.646      2.616      0.009       4.330      30.436
+pr_opened       -8.7817    155.165     -0.057      0.955    -313.547     295.984
+issue_opened   -38.7411     15.159     -2.556      0.011     -68.515      -8.968
+issue_closed    30.1396      6.126      4.920      0.000      18.107      42.173
+==============================================================================
+Omnibus:                     1163.162   Durbin-Watson:                   1.770
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1571333.221
+Skew:                          14.812   Prob(JB):                         0.00
+Kurtosis:                     257.828   Cond. No.                         30.5
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/ethereum.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.636
+Model:                            OLS   Adj. R-squared:                  0.635
+Method:                 Least Squares   F-statistic:                     528.4
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          2.15e-133
+Time:                        22:43:30   Log-Likelihood:                -3757.7
+No. Observations:                 607   AIC:                             7521.
+Df Residuals:                     604   BIC:                             7535.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           14.7862      4.824      3.065      0.002       5.312      24.261
+issue_opened  -114.0852     39.845     -2.863      0.004    -192.336     -35.834
+issue_closed   579.1815     21.026     27.545      0.000     537.888     620.475
+==============================================================================
+Omnibus:                     1268.115   Durbin-Watson:                   1.792
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2206811.636
+Skew:                          15.839   Prob(JB):                         0.00
+Kurtosis:                     296.685   Cond. No.                         8.78
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/facebook-react-native.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.041
+Model:                            OLS   Adj. R-squared:                  0.040
+Method:                 Least Squares   F-statistic:                     44.86
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           2.25e-28
+Time:                        22:43:30   Log-Likelihood:                -16221.
+No. Observations:                3123   AIC:                         3.245e+04
+Df Residuals:                    3119   BIC:                         3.247e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            5.7556      0.797      7.221      0.000       4.193       7.319
+pr_opened       -6.4188     43.635     -0.147      0.883     -91.975      79.138
+issue_opened     0.2089      0.174      1.200      0.230      -0.132       0.550
+issue_closed     0.4542      0.059      7.734      0.000       0.339       0.569
+==============================================================================
+Omnibus:                     6255.638   Durbin-Watson:                   1.985
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         15960747.681
+Skew:                          16.109   Prob(JB):                         0.00
+Kurtosis:                     351.739   Cond. No.                     1.03e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.03e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+../dataset/facebook-react.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.409
+Model:                            OLS   Adj. R-squared:                  0.408
+Method:                 Least Squares   F-statistic:                     290.5
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          6.26e-190
+Time:                        22:43:31   Log-Likelihood:                -9478.6
+No. Observations:                1684   AIC:                         1.897e+04
+Df Residuals:                    1679   BIC:                         1.899e+04
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            4.8788      1.653      2.952      0.003       1.637       8.120
+pr_opened       94.1245     25.586      3.679      0.000      43.941     144.308
+pr_merged     -185.4352     33.781     -5.489      0.000    -251.692    -119.178
+issue_opened     0.6745      0.281      2.400      0.017       0.123       1.226
+issue_closed     4.2132      0.230     18.353      0.000       3.763       4.663
+==============================================================================
+Omnibus:                     3692.681   Durbin-Watson:                   1.515
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         12614778.558
+Skew:                          19.322   Prob(JB):                         0.00
+Kurtosis:                     425.244   Cond. No.                         391.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/flot.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.937
+Model:                            OLS   Adj. R-squared:                  0.937
+Method:                 Least Squares   F-statistic:                     4304.
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):               0.00
+Time:                        22:43:31   Log-Likelihood:                -1654.9
+No. Observations:                 582   AIC:                             3316.
+Df Residuals:                     579   BIC:                             3329.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           -0.0321      0.179     -0.179      0.858      -0.383       0.319
+pr_opened       -0.2451      0.342     -0.717      0.474      -0.917       0.427
+issue_opened     0.4811      0.005     91.704      0.000       0.471       0.491
+==============================================================================
+Omnibus:                     1030.158   Durbin-Watson:                   1.468
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           515605.371
+Skew:                          11.393   Prob(JB):                         0.00
+Kurtosis:                     147.024   Cond. No.                         67.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/googleresearch.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.026
+Model:                            OLS   Adj. R-squared:                  0.021
+Method:                 Least Squares   F-statistic:                     4.577
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):            0.00357
+Time:                        22:43:31   Log-Likelihood:                -2022.5
+No. Observations:                 512   AIC:                             4053.
+Df Residuals:                     508   BIC:                             4070.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            5.5555      0.615      9.033      0.000       4.347       6.764
+pr_opened        6.2729      7.069      0.887      0.375      -7.615      20.161
+issue_opened    -2.9411      0.799     -3.681      0.000      -4.511      -1.371
+issue_closed     0.7753      0.615      1.261      0.208      -0.433       1.983
+==============================================================================
+Omnibus:                      833.040   Durbin-Watson:                   1.878
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           316019.642
+Skew:                           9.438   Prob(JB):                         0.00
+Kurtosis:                     123.238   Cond. No.                         15.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/googletest.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.884
+Model:                            OLS   Adj. R-squared:                  0.884
+Method:                 Least Squares   F-statistic:                     2295.
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          1.13e-282
+Time:                        22:43:31   Log-Likelihood:                -2639.2
+No. Observations:                 606   AIC:                             5284.
+Df Residuals:                     603   BIC:                             5298.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            3.6077      0.770      4.684      0.000       2.095       5.121
+issue_opened    -1.9652      0.048    -41.083      0.000      -2.059      -1.871
+issue_closed     2.6370      0.039     67.751      0.000       2.561       2.713
+==============================================================================
+Omnibus:                     1462.190   Durbin-Watson:                   2.017
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          6565883.048
+Skew:                          21.841   Prob(JB):                         0.00
+Kurtosis:                     511.062   Cond. No.                         29.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/keras.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.970
+Model:                            OLS   Adj. R-squared:                  0.970
+Method:                 Least Squares   F-statistic:                 1.269e+04
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):               0.00
+Time:                        22:43:32   Log-Likelihood:                -4676.4
+No. Observations:                1186   AIC:                             9361.
+Df Residuals:                    1182   BIC:                             9381.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            2.0861      0.385      5.412      0.000       1.330       2.842
+pr_opened       -2.3824      8.847     -0.269      0.788     -19.739      14.974
+pr_merged     1211.6791      6.319    191.745      0.000    1199.281    1224.077
+issue_opened     1.2963      0.163      7.952      0.000       0.976       1.616
+==============================================================================
+Omnibus:                     2006.661   Durbin-Watson:                   1.602
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1115957.417
+Skew:                          11.113   Prob(JB):                         0.00
+Kurtosis:                     151.623   Cond. No.                         58.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/numpy.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.304
+Model:                            OLS   Adj. R-squared:                  0.303
+Method:                 Least Squares   F-statistic:                     278.5
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          4.49e-101
+Time:                        22:43:32   Log-Likelihood:                -8291.1
+No. Observations:                1277   AIC:                         1.659e+04
+Df Residuals:                    1274   BIC:                         1.660e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           14.9264      4.488      3.326      0.001       6.122      23.731
+pr_merged      132.5384      5.626     23.557      0.000     121.500     143.576
+issue_opened     0.0258      0.093      0.276      0.782      -0.158       0.209
+==============================================================================
+Omnibus:                     2239.656   Durbin-Watson:                   1.623
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          5191572.522
+Skew:                          11.320   Prob(JB):                         0.00
+Kurtosis:                     314.542   Cond. No.                         60.5
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/nvidia-docker.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.784
+Model:                            OLS   Adj. R-squared:                  0.782
+Method:                 Least Squares   F-statistic:                     309.2
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           2.31e-57
+Time:                        22:43:32   Log-Likelihood:                -595.10
+No. Observations:                 173   AIC:                             1196.
+Df Residuals:                     170   BIC:                             1206.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            0.4427      0.841      0.526      0.599      -1.218       2.103
+issue_opened    -0.1555      0.463     -0.336      0.738      -1.070       0.759
+issue_closed     1.5013      0.062     24.097      0.000       1.378       1.624
+==============================================================================
+Omnibus:                      197.906   Durbin-Watson:                   2.424
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            22904.579
+Skew:                           3.835   Prob(JB):                         0.00
+Kurtosis:                      58.845   Cond. No.                         15.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/pytorch.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.158
+Model:                            OLS   Adj. R-squared:                  0.158
+Method:                 Least Squares   F-statistic:                     178.9
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          2.76e-106
+Time:                        22:43:32   Log-Likelihood:                -15661.
+No. Observations:                2854   AIC:                         3.133e+04
+Df Residuals:                    2850   BIC:                         3.135e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           13.7684      1.098     12.542      0.000      11.616      15.921
+pr_opened        5.1057      0.558      9.156      0.000       4.012       6.199
+issue_opened    -0.4549      0.903     -0.504      0.614      -2.225       1.315
+issue_closed     3.5593      0.501      7.110      0.000       2.578       4.541
+==============================================================================
+Omnibus:                     4256.880   Durbin-Watson:                   1.979
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1488814.100
+Skew:                           9.107   Prob(JB):                         0.00
+Kurtosis:                     113.400   Cond. No.                         4.70
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/scikit-learn.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.786
+Model:                            OLS   Adj. R-squared:                  0.786
+Method:                 Least Squares   F-statistic:                     3069.
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):               0.00
+Time:                        22:43:33   Log-Likelihood:                -13011.
+No. Observations:                2506   AIC:                         2.603e+04
+Df Residuals:                    2502   BIC:                         2.605e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            5.9362      0.873      6.798      0.000       4.224       7.649
+pr_opened        3.1105      0.609      5.108      0.000       1.916       4.305
+pr_merged       26.8298      0.459     58.507      0.000      25.931      27.729
+issue_opened     1.0897      0.394      2.768      0.006       0.318       1.862
+==============================================================================
+Omnibus:                     4722.472   Durbin-Watson:                   1.772
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         13192441.661
+Skew:                          13.782   Prob(JB):                         0.00
+Kurtosis:                     357.379   Cond. No.                         5.56
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/tensorflow.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.002
+Model:                            OLS   Adj. R-squared:                  0.001
+Method:                 Least Squares   F-statistic:                     2.264
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):             0.0790
+Time:                        22:43:33   Log-Likelihood:                -28332.
+No. Observations:                3713   AIC:                         5.667e+04
+Df Residuals:                    3709   BIC:                         5.670e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           33.0244      8.296      3.981      0.000      16.760      49.289
+pr_opened      -44.6403    151.022     -0.296      0.768    -340.734     251.454
+issue_opened   -16.9320     29.389     -0.576      0.565     -74.553      40.689
+issue_closed    16.8753      6.595      2.559      0.011       3.945      29.805
+==============================================================================
+Omnibus:                    12183.705   Durbin-Watson:                   1.985
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):       1600749545.200
+Skew:                          55.159   Prob(JB):                         0.00
+Kurtosis:                    3217.765   Cond. No.                         23.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/unity.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.236
+Model:                            OLS   Adj. R-squared:                  0.230
+Method:                 Least Squares   F-statistic:                     38.69
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):           8.20e-22
+Time:                        22:43:33   Log-Likelihood:                -1962.9
+No. Observations:                 380   AIC:                             3934.
+Df Residuals:                     376   BIC:                             3949.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            8.5091      2.647      3.214      0.001       3.304      13.714
+pr_opened        1.9920      0.430      4.629      0.000       1.146       2.838
+issue_opened    -2.4046      1.261     -1.907      0.057      -4.883       0.074
+issue_closed     0.6182      0.529      1.169      0.243      -0.422       1.658
+==============================================================================
+Omnibus:                      702.159   Durbin-Watson:                   2.017
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           388057.103
+Skew:                          11.491   Prob(JB):                         0.00
+Kurtosis:                     157.857   Cond. No.                         15.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+../dataset/vscode.csv
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                commits   R-squared:                       0.370
+Model:                            OLS   Adj. R-squared:                  0.369
+Method:                 Least Squares   F-statistic:                     399.7
+Date:                Tue, 07 Dec 2021   Prob (F-statistic):          3.31e-204
+Time:                        22:43:34   Log-Likelihood:                -14998.
+No. Observations:                2045   AIC:                         3.000e+04
+Df Residuals:                    2041   BIC:                         3.003e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            1.9399      8.322      0.233      0.816     -14.381      18.261
+pr_opened      195.1506     48.342      4.037      0.000     100.346     289.955
+pr_merged      557.2290     35.396     15.743      0.000     487.813     626.646
+issue_opened   183.7029      8.794     20.889      0.000     166.457     200.949
+==============================================================================
+Omnibus:                     3559.779   Durbin-Watson:                   1.572
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          3228133.014
+Skew:                          11.945   Prob(JB):                         0.00
+Kurtosis:                     196.169   Cond. No.                         6.72
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
