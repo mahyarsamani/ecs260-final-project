@@ -5,7 +5,7 @@ Dep. Variable:                commits   R-squared:                       0.446
 Model:                            OLS   Adj. R-squared:                  0.445
 Method:                 Least Squares   F-statistic:                     737.2
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          1.39e-235
-Time:                        00:02:44   Log-Likelihood:                -9085.5
+Time:                        14:38:02   Log-Likelihood:                -9085.5
 No. Observations:                1834   AIC:                         1.818e+04
 Df Residuals:                    1831   BIC:                         1.819e+04
 Df Model:                           2                                         
@@ -33,7 +33,7 @@ Dep. Variable:                commits   R-squared:                       0.010
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     4.020
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):            0.00737
-Time:                        00:02:44   Log-Likelihood:                -9355.6
+Time:                        14:38:02   Log-Likelihood:                -9355.6
 No. Observations:                1163   AIC:                         1.872e+04
 Df Residuals:                    1159   BIC:                         1.874e+04
 Df Model:                           3                                         
@@ -62,7 +62,7 @@ Dep. Variable:                commits   R-squared:                       0.674
 Model:                            OLS   Adj. R-squared:                  0.673
 Method:                 Least Squares   F-statistic:                     638.8
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          4.84e-151
-Time:                        00:02:44   Log-Likelihood:                -4367.7
+Time:                        14:38:03   Log-Likelihood:                -4367.7
 No. Observations:                 620   AIC:                             8741.
 Df Residuals:                     617   BIC:                             8755.
 Df Model:                           2                                         
@@ -90,7 +90,7 @@ Dep. Variable:                commits   R-squared:                       0.046
 Model:                            OLS   Adj. R-squared:                  0.043
 Method:                 Least Squares   F-statistic:                     17.11
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           7.41e-11
-Time:                        00:02:44   Log-Likelihood:                -7501.4
+Time:                        14:38:03   Log-Likelihood:                -7501.4
 No. Observations:                1070   AIC:                         1.501e+04
 Df Residuals:                    1066   BIC:                         1.503e+04
 Df Model:                           3                                         
@@ -119,7 +119,7 @@ Dep. Variable:                commits   R-squared:                       0.416
 Model:                            OLS   Adj. R-squared:                  0.398
 Method:                 Least Squares   F-statistic:                     23.13
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           2.60e-08
-Time:                        00:02:45   Log-Likelihood:                -389.48
+Time:                        14:38:03   Log-Likelihood:                -389.48
 No. Observations:                  68   AIC:                             785.0
 Df Residuals:                      65   BIC:                             791.6
 Df Model:                           2                                         
@@ -147,7 +147,7 @@ Dep. Variable:                commits   R-squared:                       0.510
 Model:                            OLS   Adj. R-squared:                  0.510
 Method:                 Least Squares   F-statistic:                     1435.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):               0.00
-Time:                        00:02:45   Log-Likelihood:                -15971.
+Time:                        14:38:04   Log-Likelihood:                -15971.
 No. Observations:                2761   AIC:                         3.195e+04
 Df Residuals:                    2758   BIC:                         3.197e+04
 Df Model:                           2                                         
@@ -175,7 +175,7 @@ Dep. Variable:                commits   R-squared:                       0.221
 Model:                            OLS   Adj. R-squared:                  0.195
 Method:                 Least Squares   F-statistic:                     8.630
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           0.000501
-Time:                        00:02:45   Log-Likelihood:                -304.34
+Time:                        14:38:04   Log-Likelihood:                -304.34
 No. Observations:                  64   AIC:                             614.7
 Df Residuals:                      61   BIC:                             621.2
 Df Model:                           2                                         
@@ -203,7 +203,7 @@ Dep. Variable:                commits   R-squared:                       0.862
 Model:                            OLS   Adj. R-squared:                  0.862
 Method:                 Least Squares   F-statistic:                     3857.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):               0.00
-Time:                        00:02:45   Log-Likelihood:                -7423.2
+Time:                        14:38:04   Log-Likelihood:                -7423.2
 No. Observations:                1235   AIC:                         1.485e+04
 Df Residuals:                    1232   BIC:                         1.487e+04
 Df Model:                           2                                         
@@ -231,7 +231,7 @@ Dep. Variable:                commits   R-squared:                       0.041
 Model:                            OLS   Adj. R-squared:                  0.036
 Method:                 Least Squares   F-statistic:                     8.075
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           2.83e-05
-Time:                        00:02:45   Log-Likelihood:                -3699.4
+Time:                        14:38:04   Log-Likelihood:                -3699.4
 No. Observations:                 573   AIC:                             7407.
 Df Residuals:                     569   BIC:                             7424.
 Df Model:                           3                                         
@@ -260,7 +260,7 @@ Dep. Variable:                commits   R-squared:                       0.636
 Model:                            OLS   Adj. R-squared:                  0.635
 Method:                 Least Squares   F-statistic:                     528.4
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          2.15e-133
-Time:                        00:02:45   Log-Likelihood:                -3757.7
+Time:                        14:38:04   Log-Likelihood:                -3757.7
 No. Observations:                 607   AIC:                             7521.
 Df Residuals:                     604   BIC:                             7535.
 Df Model:                           2                                         
@@ -288,7 +288,7 @@ Dep. Variable:                commits   R-squared:                       0.041
 Model:                            OLS   Adj. R-squared:                  0.040
 Method:                 Least Squares   F-statistic:                     44.86
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           2.25e-28
-Time:                        00:02:46   Log-Likelihood:                -16221.
+Time:                        14:38:05   Log-Likelihood:                -16221.
 No. Observations:                3123   AIC:                         3.245e+04
 Df Residuals:                    3119   BIC:                         3.247e+04
 Df Model:                           3                                         
@@ -319,7 +319,7 @@ Dep. Variable:                commits   R-squared:                       0.409
 Model:                            OLS   Adj. R-squared:                  0.408
 Method:                 Least Squares   F-statistic:                     290.5
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          6.26e-190
-Time:                        00:02:46   Log-Likelihood:                -9478.6
+Time:                        14:38:05   Log-Likelihood:                -9478.6
 No. Observations:                1684   AIC:                         1.897e+04
 Df Residuals:                    1679   BIC:                         1.899e+04
 Df Model:                           4                                         
@@ -349,7 +349,7 @@ Dep. Variable:                commits   R-squared:                       0.937
 Model:                            OLS   Adj. R-squared:                  0.937
 Method:                 Least Squares   F-statistic:                     4304.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):               0.00
-Time:                        00:02:46   Log-Likelihood:                -1654.9
+Time:                        14:38:06   Log-Likelihood:                -1654.9
 No. Observations:                 582   AIC:                             3316.
 Df Residuals:                     579   BIC:                             3329.
 Df Model:                           2                                         
@@ -377,7 +377,7 @@ Dep. Variable:                commits   R-squared:                       0.026
 Model:                            OLS   Adj. R-squared:                  0.021
 Method:                 Least Squares   F-statistic:                     4.577
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):            0.00357
-Time:                        00:02:46   Log-Likelihood:                -2022.5
+Time:                        14:38:06   Log-Likelihood:                -2022.5
 No. Observations:                 512   AIC:                             4053.
 Df Residuals:                     508   BIC:                             4070.
 Df Model:                           3                                         
@@ -406,7 +406,7 @@ Dep. Variable:                commits   R-squared:                       0.884
 Model:                            OLS   Adj. R-squared:                  0.884
 Method:                 Least Squares   F-statistic:                     2295.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          1.13e-282
-Time:                        00:02:46   Log-Likelihood:                -2639.2
+Time:                        14:38:07   Log-Likelihood:                -2639.2
 No. Observations:                 606   AIC:                             5284.
 Df Residuals:                     603   BIC:                             5298.
 Df Model:                           2                                         
@@ -434,7 +434,7 @@ Dep. Variable:                commits   R-squared:                       0.970
 Model:                            OLS   Adj. R-squared:                  0.970
 Method:                 Least Squares   F-statistic:                 1.269e+04
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):               0.00
-Time:                        00:02:46   Log-Likelihood:                -4676.4
+Time:                        14:38:07   Log-Likelihood:                -4676.4
 No. Observations:                1186   AIC:                             9361.
 Df Residuals:                    1182   BIC:                             9381.
 Df Model:                           3                                         
@@ -463,7 +463,7 @@ Dep. Variable:                commits   R-squared:                       0.926
 Model:                            OLS   Adj. R-squared:                  0.924
 Method:                 Least Squares   F-statistic:                     685.4
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           7.94e-63
-Time:                        00:02:47   Log-Likelihood:                -743.32
+Time:                        14:38:08   Log-Likelihood:                -743.32
 No. Observations:                 113   AIC:                             1493.
 Df Residuals:                     110   BIC:                             1501.
 Df Model:                           2                                         
@@ -491,7 +491,7 @@ Dep. Variable:                commits   R-squared:                       0.539
 Model:                            OLS   Adj. R-squared:                  0.539
 Method:                 Least Squares   F-statistic:                     1015.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          1.64e-292
-Time:                        00:02:47   Log-Likelihood:                -11281.
+Time:                        14:38:08   Log-Likelihood:                -11281.
 No. Observations:                1737   AIC:                         2.257e+04
 Df Residuals:                    1734   BIC:                         2.258e+04
 Df Model:                           2                                         
@@ -519,7 +519,7 @@ Dep. Variable:                commits   R-squared:                       0.304
 Model:                            OLS   Adj. R-squared:                  0.303
 Method:                 Least Squares   F-statistic:                     278.5
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          4.49e-101
-Time:                        00:02:47   Log-Likelihood:                -8291.1
+Time:                        14:38:09   Log-Likelihood:                -8291.1
 No. Observations:                1277   AIC:                         1.659e+04
 Df Residuals:                    1274   BIC:                         1.660e+04
 Df Model:                           2                                         
@@ -547,7 +547,7 @@ Dep. Variable:                commits   R-squared:                       0.784
 Model:                            OLS   Adj. R-squared:                  0.782
 Method:                 Least Squares   F-statistic:                     309.2
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           2.31e-57
-Time:                        00:02:47   Log-Likelihood:                -595.10
+Time:                        14:38:09   Log-Likelihood:                -595.10
 No. Observations:                 173   AIC:                             1196.
 Df Residuals:                     170   BIC:                             1206.
 Df Model:                           2                                         
@@ -575,7 +575,7 @@ Dep. Variable:                commits   R-squared:                       0.158
 Model:                            OLS   Adj. R-squared:                  0.158
 Method:                 Least Squares   F-statistic:                     178.9
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          2.76e-106
-Time:                        00:02:47   Log-Likelihood:                -15661.
+Time:                        14:38:10   Log-Likelihood:                -15661.
 No. Observations:                2854   AIC:                         3.133e+04
 Df Residuals:                    2850   BIC:                         3.135e+04
 Df Model:                           3                                         
@@ -604,7 +604,7 @@ Dep. Variable:                commits   R-squared:                       0.786
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     3069.
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):               0.00
-Time:                        00:02:48   Log-Likelihood:                -13011.
+Time:                        14:38:11   Log-Likelihood:                -13011.
 No. Observations:                2506   AIC:                         2.603e+04
 Df Residuals:                    2502   BIC:                         2.605e+04
 Df Model:                           3                                         
@@ -633,7 +633,7 @@ Dep. Variable:                commits   R-squared:                       0.002
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     2.264
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):             0.0790
-Time:                        00:02:48   Log-Likelihood:                -28332.
+Time:                        14:38:12   Log-Likelihood:                -28332.
 No. Observations:                3713   AIC:                         5.667e+04
 Df Residuals:                    3709   BIC:                         5.670e+04
 Df Model:                           3                                         
@@ -662,7 +662,7 @@ Dep. Variable:                commits   R-squared:                       0.236
 Model:                            OLS   Adj. R-squared:                  0.230
 Method:                 Least Squares   F-statistic:                     38.69
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):           8.20e-22
-Time:                        00:02:48   Log-Likelihood:                -1962.9
+Time:                        14:38:13   Log-Likelihood:                -1962.9
 No. Observations:                 380   AIC:                             3934.
 Df Residuals:                     376   BIC:                             3949.
 Df Model:                           3                                         
@@ -691,7 +691,7 @@ Dep. Variable:                commits   R-squared:                       0.370
 Model:                            OLS   Adj. R-squared:                  0.369
 Method:                 Least Squares   F-statistic:                     399.7
 Date:                Wed, 08 Dec 2021   Prob (F-statistic):          3.31e-204
-Time:                        00:02:48   Log-Likelihood:                -14998.
+Time:                        14:38:14   Log-Likelihood:                -14998.
 No. Observations:                2045   AIC:                         3.000e+04
 Df Residuals:                    2041   BIC:                         3.003e+04
 Df Model:                           3                                         
