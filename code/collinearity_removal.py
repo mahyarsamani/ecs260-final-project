@@ -66,24 +66,11 @@ for filename in sorted(glob.glob('../dataset/*.csv')):
     
         print("The variance of the number of commits: ", end='')
         print(data_var)
-  
-    #np.seterr('raise')
-
     
 
     predictors = []
     formula = "commits ~ "
     first = True
-
-    # pr_c_zeroes_num    = (data_df['pr_closed'] == 0).sum()
-    # pr_c_nonzeroes_num = (data_df['pr_closed'] != 0).sum()
-    
-    # print("pr_closed, nonzeroes = ", pr_c_nonzeroes_num, ", zeroes: ", pr_c_zeroes_num)
-
-    # if pr_c_nonzeroes_num != 0:
-    #     predictors.append('pr_closed')
-    #     formula = formula + "pr_closed "
-    #     first = False
 
     pr_o_zeroes_num    = (data_df['pr_opened'] == 0).sum()
     pr_o_nonzeroes_num = (data_df['pr_opened'] != 0).sum()
@@ -243,32 +230,15 @@ for filename in sorted(glob.glob('../dataset/*.csv')):
         pval_pr_merged = 'NA'
 
     const_pvals.append(round(pval_const, 6))
-    # print(pval_issue_opened)
     issue_opened_pvals.append(pval_issue_opened)
-    # print(pval_issue_closed)
     issue_closed_pvals.append(pval_issue_closed)
-    # print(pval_pr_opened)
     pr_opened_pvals.append(pval_pr_opened)
-    # print(pval_pr_closed)
     pr_closed_pvals.append(pval_pr_closed)
-    # print(pval_pr_merged)
     pr_merged_pvals.append(pval_pr_merged)
-    # print(parsed_pvalue)
-    # all_pvalues.append(mlr_model.pvalues)
 
     print()
     print()
     print()
-
-# print("all_filenames: ", all_filenames)
-# print("all_rsquares: ", all_rsquares)
-# print("const_pvals: ", const_pvals)
-# print("issue_opened_pvals: ", issue_opened_pvals)
-# print("issue_closed_pvals: ", issue_closed_pvals)
-# print("pr_opened_pvals: ", pr_opened_pvals)
-# print("pr_closed_pvals: ", pr_closed_pvals)
-# print("pr_merged_pvals: ", pr_merged_pvals)
-
 ### Create table comparison of r-squares, p-values and average r-squares ###
 df = pd.DataFrame({ 'Repositories': all_filenames,
                     'R^2': all_rsquares,
@@ -281,11 +251,6 @@ df = pd.DataFrame({ 'Repositories': all_filenames,
 
 df = df.style.hide_index()
 dfi.export(df, '../results/summary.png')
-# display(df)
-# html = df.to_html()
-# text_file = open("../results/summary.html", "w")
-# text_file.write(html)
-# text_file.close()
 
 ### Create table of averages ###
 avg_rsquares = mean(all_rsquares)
@@ -302,23 +267,19 @@ pr_merged_pvals_new = []
 for val in issue_opened_pvals:
     if(val != 'NA'):
         issue_opened_pvals_new.append(val)
-# print(issue_opened_pvals_new)
 avg_issue_opened_pvals = mean(issue_opened_pvals_new)
 
 for val in issue_closed_pvals:
     if(val != 'NA'):
         issue_closed_pvals_new.append(val)
-# print(issue_closed_pvals_new)
 avg_issue_closed_pvals = mean(issue_closed_pvals_new)
 
 for val in pr_opened_pvals:
     if(val != 'NA'):
         pr_opened_pvals_new.append(val)
-# print(pr_opened_pvals_new)
 avg_pr_opened_pvals = mean(pr_opened_pvals_new)
 
 print(pr_closed_pvals)
-# if(len(pr_closed_pvals) != 0):
 if(all(elem == 'NA' for elem in pr_closed_pvals)):
     avg_pr_closed_pvals = 'NA'
 else:
@@ -333,7 +294,6 @@ print(avg_pr_closed_pvals)
 for val in pr_merged_pvals:
     if(val != 'NA'):
         pr_merged_pvals_new.append(val)
-# print(pr_merged_pvals_new)
 avg_pr_merged_pvals = mean(pr_merged_pvals_new)
 
 df2 = pd.DataFrame({ 'Avg. R^2': [avg_rsquares],
@@ -343,7 +303,6 @@ df2 = pd.DataFrame({ 'Avg. R^2': [avg_rsquares],
                     'Avg. PR_opened p-val': [avg_pr_opened_pvals],
                     'Avg. PR_closed p-val': [avg_pr_closed_pvals],
                     'Avg. PR_merged p-val': [avg_pr_merged_pvals]})
-
-# df2 = df2.style.hide_index()
+                    
 df2_transposed = df2.T
 dfi.export(df2_transposed, '../results/average_summary.png')
